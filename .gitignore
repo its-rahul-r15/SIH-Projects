@@ -1,0 +1,31 @@
+# 1. DEPENDENCIES - The biggest one!
+node_modules/
+
+# 2. ENVIRONMENT VARIABLES - Never commit your secrets!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 3. LOGS - Keep your directories clean
+*.log
+logs/
+
+# 4. RUNTIME DATA & CACHE
+.pnp*
+.npm/
+.yarn/
+.cache/
+.parcel-cache/
+dist/ # (if you use a build tool like Vite)
+build/ # (if you use Create React App)
+
+# 5. OS GENERATED FILES (Optional but good practice)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
