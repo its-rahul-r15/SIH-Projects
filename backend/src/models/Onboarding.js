@@ -37,9 +37,11 @@ const OnboardingSchema = new mongoose.Schema(
 
     // 🔹 Career Interests & Goals
     interests: [String], // ["Engineering", "Medical", "Law"]
+    futureGoal: { type: String }, // e.g. "IAS prep", "Software Engineer"
+
+    // 🔹 Skills & Personality
     skills: [String], // ["Analytical", "Creative"]
     extracurriculars: [String], // ["Sports", "Debate", "Music"]
-    futureGoal: { type: String }, // e.g. "IAS prep", "Software Engineer"
 
     // 🔹 Preferences
     preferredStudyMode: {
@@ -59,6 +61,25 @@ const OnboardingSchema = new mongoose.Schema(
     dreamColleges: [String],
     examPreferences: [String], // ["JEE", "NEET", "CAT"]
 
+    collegeRecommendations: [
+  {
+    priority: String,
+    college: String,
+    reason: String
+  }
+],
+    // 🔹 Aptitude / Personality Quiz (NEW)
+    aptitudeResponses: [
+      {
+        question: String,
+        answer: String,
+      },
+    ],
+    personalityTraits: [String], // ["Leader", "Creative", "Logical"]
+
+    // 🔹 Suggested Paths (AI/logic se populate hoga)
+    suggestedStreams: [String], // ["Science", "Commerce", "Arts"]
+    suggestedCareers: [String], // ["Engineer", "Doctor", "Designer"]
   },
   { timestamps: true }
 );

@@ -10,11 +10,17 @@ import authRoutes from './routes/auth.js';
 import collegeRoutes from './routes/colleges.js';
 import quizRoutes from './routes/quiz.js';
 import onboardingRoutes from "./routes/onboarding.js";
+import careerMappingRoutes from './routes/careerMapping.js';
 
 dotenv.config();
 const app = express();
 app.use(helmet());
-app.use(cors({ origin: process.env.ORIGIN || '*' }));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true, // if using cookies
+  allowedHeaders: ['Authorization', 'Content-Type'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 
@@ -26,6 +32,8 @@ app.get('/', (req, res) => res.json({ ok: true }));
 app.use('/api/colleges', collegeRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use("/api/onboarding", onboardingRoutes);
+app.use('/api/career-mapping', careerMappingRoutes);
+
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
 async function start() {
