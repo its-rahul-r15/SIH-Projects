@@ -23,24 +23,24 @@ export const saveOnboarding = async (req, res) => {
     // 3️⃣ Generate AI recommendations
     const aiResult = await generatePlanForOnboarding(onboarding);
 
-    // 4️⃣ Map AI fields to schema
     const suggestedStreams = aiResult.ranked_streams?.map(s => s.stream) || [];
-    const suggestedCareers =
-      aiResult.career_paths?.flatMap(c => c.careers) || [];
-    const collegeRecommendations = aiResult.college_recommendations || [];
+const suggestedCareers = aiResult.career_paths?.flatMap(c => c.careers) || [];
+const collegeRecommendations = aiResult.college_recommendations || [];
+const scholarshipRecommendations = aiResult.scholarship_recommendations || [];
 
-    // 5️⃣ Update onboarding doc with AI suggestions
-    onboarding = await Onboarding.findOneAndUpdate(
-      { userId },
-      {
-        $set: {
-          suggestedStreams,
-          suggestedCareers,
-          collegeRecommendations, // store detailed AI suggestions
-        },
-      },
-      { new: true }
-    );
+// 5️⃣ Update onboarding doc with AI suggestions
+onboarding = await Onboarding.findOneAndUpdate(
+  { userId },
+  {
+    $set: {
+      suggestedStreams,
+      suggestedCareers,
+      collegeRecommendations,
+      scholarshipRecommendations, // now stored
+    },
+  },
+  { new: true }
+);
 
     // 6️⃣ Return onboarding + AI result to frontend
     return res.json({ ok: true, data: { onboarding, aiResult } });

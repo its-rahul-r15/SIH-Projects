@@ -1,8 +1,6 @@
 // services/gemini.js
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
 const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models";
 const MODEL = "gemini-1.5-flash";
 const API_KEY = process.env.GEMINI_API_KEY;

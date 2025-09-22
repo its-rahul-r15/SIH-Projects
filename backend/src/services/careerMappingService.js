@@ -2,9 +2,7 @@
 import Onboarding from "../models/Onboarding.js";
 
 import { callGeminiRaw } from "../lib/gemini.js";
-/**
- * Try robust JSON parse — tries full text then extracts first {...} block.
- */
+
 function safeParseJSON(text) {
   if (!text) return null;
   try { return JSON.parse(text); } catch (e) {}
@@ -15,10 +13,6 @@ function safeParseJSON(text) {
   return null;
 }
 
-/**
- * A conservative fallback mapping (if LLM fails).
- * Keep this simple but useful.
- */
 function fallbackMapping(course) {
   const map = {
     "B.Sc": {
@@ -60,10 +54,6 @@ function fallbackMapping(course) {
   };
 }
 
-/**
- * Build a strict prompt (system + user)
- * We request JSON only using the schema below.
- */
 function buildPrompt(profile, course) {
   const system = `
 You are an expert Indian career counselor. Return only valid JSON (no explanation).
@@ -87,11 +77,7 @@ Please produce JSON per schema.`;
   return { system, user };
 }
 
-/**
- * Main exported function:
- * - tries to read cached mapping from Onboarding.aiCareerMapping[course]
- * - if absent or forceRefresh, calls Gemini, parses, saves to onboarding.aiCareerMapping[course]
- */
+
 export async function generateCareerMapping(userId, course, { forceRefresh = false } = {}) {
   const onboarding = await Onboarding.findOne({ userId });
   if (!onboarding) throw new Error("Onboarding not found");
@@ -125,7 +111,7 @@ export async function generateCareerMapping(userId, course, { forceRefresh = fal
     rawText = resp.rawText;
     parsed = safeParseJSON(rawText);
     if (!parsed) {
-      // retry with a stricter instruction
+     
       const retryUser = `Previous response wasn't valid JSON. Return ONLY valid JSON following the schema exactly. Student profile: ${JSON.stringify(profile)} Course: ${course}`;
       const resp2 = await callGeminiRaw(retryUser, { system, temperature: 0.0, maxOutputTokens: 700 });
       rawText = resp2.rawText;

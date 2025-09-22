@@ -57,7 +57,28 @@ Return ONLY a JSON object with this structure:
       "college": "DEF College",
       "reason": "Backup choice"
     }
-  ]
+  ],
+  "scholarship_recommendations": [
+  {
+    "name": "Merit Scholarship",
+    "amount": "50,000 INR per year",
+    "eligibility": "Top 10% marks in previous exams, Science stream",
+    "reason": "Reward for academic excellence"
+  },
+  {
+    "name": "Need-Based Scholarship",
+    "amount": "30,000 INR per year",
+    "eligibility": "Low-income family, any stream",
+    "reason": "Financial support for deserving students"
+  },
+  {
+    "name": "Special Talent Scholarship",
+    "amount": "25,000 INR per year",
+    "eligibility": "Students with sports or arts achievements",
+    "reason": "Encourages extracurricular excellence"
+  }
+]
+
 }
 
 Be concise, precise, and return valid JSON only (no backticks or extra text).

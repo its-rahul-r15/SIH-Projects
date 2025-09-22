@@ -12,6 +12,7 @@ import quizRoutes from './routes/quiz.js';
 import onboardingRoutes from "./routes/onboarding.js";
 import careerMappingRoutes from './routes/careerMapping.js';
 
+import assistantRoutes from './routes/assistantRoutes.js';
 dotenv.config();
 const app = express();
 app.use(helmet());
@@ -33,6 +34,8 @@ app.use('/api/colleges', collegeRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use("/api/onboarding", onboardingRoutes);
 app.use('/api/career-mapping', careerMappingRoutes);
+app.use('/api/assistant', assistantRoutes); 
+
 
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;

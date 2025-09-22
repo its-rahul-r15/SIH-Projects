@@ -68,6 +68,15 @@ const OnboardingSchema = new mongoose.Schema(
     reason: String
   }
 ],
+
+scholarshipRecommendations: [
+  {
+    name: String,       // e.g., "Merit Scholarship"
+    amount: String,     // e.g., "50,000 INR per year"
+    eligibility: String, // e.g., "Top 10% marks in Science stream"
+    reason: String       // e.g., "Reward for academic excellence"
+  }
+],
     // 🔹 Aptitude / Personality Quiz (NEW)
     aptitudeResponses: [
       {
