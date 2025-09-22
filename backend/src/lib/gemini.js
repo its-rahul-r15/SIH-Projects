@@ -3,7 +3,7 @@ import axios from "axios";
 
 const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models";
 const MODEL = "gemini-1.5-flash";
-const API_KEY = process.env.GEMINI_API_KEY;
+const API_KEY = "AIzaSyCzBmsLi4y9DPClTUsnXmSwAZ3iRGVAEYQ";
 
 
 export async function callGemini(prompt) {
