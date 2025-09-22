@@ -62,7 +62,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': https://sih-projects-delta.vercel.app/',
+      '/api': https://sih-projects-delta.vercel.app',
     },
   },
 });
