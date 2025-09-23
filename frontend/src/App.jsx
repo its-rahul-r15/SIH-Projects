@@ -89,10 +89,10 @@ export default function App() {
       </Routes>
     </BrowserRouter>
 
-    <div className="App">
-      {/* Other content */}
+    {/* <div className="App">
+      
       <FloatingAssistant />
-    </div>
+    </div> */}
 
     </>
   );
