@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://sih-projects-alwb.vercel.app',
   credentials: true, // if using cookies
   allowedHeaders: ['Authorization', 'Content-Type'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
