@@ -12,7 +12,7 @@ const Scholarship = () => {
   useEffect(() => {
     const fetchScholarships = async () => {
       try {
-        const res = await axios.get("/api/onboarding", {
+        const res = await axios.get("https://sih-projects-alwb.vercel.app/api/onboarding", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
