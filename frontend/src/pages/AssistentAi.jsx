@@ -30,7 +30,7 @@ export default function Assistant() {
       try {
         const API = axios.create({ baseURL: import.meta.env.VITE_API_URL });
         const token = localStorage.getItem('token');
-        const res = await API.get('/api/assistant/history', { 
+        const res = await API.get('https://sih-projects-delta.vercel.app/api/assistant/history', { 
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data?.ok) {
@@ -66,7 +66,7 @@ export default function Assistant() {
     try {
       const API = axios.create({ baseURL: import.meta.env.VITE_API_URL });
       const token = localStorage.getItem('token');
-      const res = await API.post('/api/assistant/chat', 
+      const res = await API.post('https://sih-projects-delta.vercel.app/api/assistant/chat', 
         { message: messageText }, 
         { headers: { Authorization: `Bearer ${token}` }}
       );

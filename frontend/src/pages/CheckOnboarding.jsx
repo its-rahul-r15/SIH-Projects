@@ -18,7 +18,7 @@ export default function CheckOnboarding() {
         if (!token) throw new Error('No token found');
 
         const API = axios.create({ baseURL: import.meta.env.VITE_API_URL });
-        const res = await API.get('/api/onboarding/status', {
+        const res = await API.get('https://sih-projects-delta.vercel.app/api/onboarding/status', {
           headers: { Authorization: `Bearer ${token}` }
         });
 

@@ -9,7 +9,7 @@ const Result = () => {
   useEffect(() => {
     const fetchOnboarding = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/onboarding", {
+        const res = await axios.get("https://sih-projects-delta.vercel.app/api/onboarding", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

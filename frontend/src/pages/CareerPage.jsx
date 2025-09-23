@@ -19,7 +19,7 @@ export default function CareerPage() {
         setError("");
         const token = localStorage.getItem("token");
         const API = axios.create({ baseURL: import.meta.env.VITE_API_URL });
-        const res = await API.get(`/api/career-mapping/${encodeURIComponent(course)}`, {
+        const res = await API.get(`https://sih-projects-delta.vercel.app/api/career-mapping/${encodeURIComponent(course)}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data?.ok) {

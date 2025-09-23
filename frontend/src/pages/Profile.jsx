@@ -12,7 +12,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("api/onboarding", {
+        const res = await axios.get("https://sih-projects-delta.vercel.app/api/onboarding", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
