@@ -27,7 +27,7 @@ const Register = () => {
     setError("");
 
     try {
-      const res = await axios.post("api/auth/register", formData);
+      const res = await axios.post("https://sih-projects-alwb.vercel.app/api/auth/register", formData);
       if (res.data.ok) {
         localStorage.setItem("token", res.data.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.data.user));
