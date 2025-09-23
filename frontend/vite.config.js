@@ -60,9 +60,6 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js',
   },
-  server: {
-    proxy: {
-      '/api': https://sih-projects-delta.vercel.app',
-    },
-  },
+  
+
 });
