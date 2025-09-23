@@ -35,17 +35,17 @@ export default defineConfig({
         theme_color: '#4f46e5',
         icons: [
           {
-            src: 'pic1.png', // ye tumhare public folder me hona chahiye
+            src: 'img2.png', // ye tumhare public folder me hona chahiye
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'pic2.png',
+            src: 'img1.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'pic2.png',
+            src: 'img1.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
