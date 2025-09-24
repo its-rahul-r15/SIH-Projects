@@ -33,11 +33,7 @@ function HomeRedirect() {
   }
 }
 
- const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW({
-    onRegistered(r) {
-      console.log('SW registered:', r);
-    }
-  });
+ 
 
 
 export default function App() {
@@ -51,7 +47,7 @@ export default function App() {
         </div>
       )}
       {offlineReady && <div>App ready to work offline!</div>}
-      
+
     <BrowserRouter>
       <Routes>
         {/* Public routes */}
