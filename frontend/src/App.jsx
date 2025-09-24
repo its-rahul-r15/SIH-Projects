@@ -41,12 +41,7 @@ export default function App() {
     <>
     <PwaInstallPrompt />
 
-    {needRefresh && (
-        <div className="fixed bottom-4 left-4 bg-indigo-500 text-white p-2 rounded">
-          New version available. <button onClick={() => updateServiceWorker(true)}>Reload</button>
-        </div>
-      )}
-      {offlineReady && <div>App ready to work offline!</div>}
+   
 
     <BrowserRouter>
       <Routes>
