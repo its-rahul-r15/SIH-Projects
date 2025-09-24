@@ -21,6 +21,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import 'reactflow/dist/style.css';
 import Assistant from './pages/AssistentAi';
 import FloatingAssistant from './components/FloatingAssistant';
+import PwaInstallPrompt from './components/PwaInstallPrompt';
 
 // small component to decide where "/" goes
 function HomeRedirect() {
@@ -35,6 +36,7 @@ function HomeRedirect() {
 export default function App() {
   return (
     <>
+    <PwaInstallPrompt />
     <BrowserRouter>
       <Routes>
         {/* Public routes */}
