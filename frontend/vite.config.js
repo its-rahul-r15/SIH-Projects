@@ -26,7 +26,7 @@ export default defineConfig({
         ],
       },
       manifest: {
-        name: 'Career Path',
+        name: 'Career_Path',
         short_name: 'Career',
         description: 'My awesome PWA app By Griffin_byte',
         start_url: '/',
